@@ -1,0 +1,19 @@
+{
+  "name": "forge-app",
+  "version": "1.0.0",
+  "description": "The Forge App (need to update this description eventually)",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "forge",
+    "gamification",
+    "gamification",
+    "framework",
+    "forge",
+    "framework"
+  ],
+  "author": "Rogerio de Leon Pereira",
+  "license": "MIT"
+}

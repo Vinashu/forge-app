@@ -69,6 +69,7 @@ const loginUser = asyncHandler(async (req, res) => {
             _id: user._id,
             name: user.name,
             email: user.email,
+            rewards: user.rewards,
             token: generateToken(user._id)
         });
     } else {
@@ -81,10 +82,12 @@ const loginUser = asyncHandler(async (req, res) => {
 // @route   GET /api/users/me
 // @access  Private
 const getMe = asyncHandler(async (req, res) => {
+    console.log(req.user);
     const user = {
         id: req.user._id,
         name: req.user.name,
         email: req.user.email,
+        rewards: req.user.rewards,
     }
     res.status(200).json(user);
 });

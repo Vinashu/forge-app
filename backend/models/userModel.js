@@ -19,7 +19,11 @@ const userSchema = mongoose.Schema({
         required: true,
         default: false
     },
-    rewards: []
+    rewards: {
+        type: Array,
+        required: true,
+        default: []
+    }
 }, {timestamps: true});
 
 const User = mongoose.model('User', userSchema);

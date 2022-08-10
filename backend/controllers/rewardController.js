@@ -36,7 +36,7 @@ const checkReward = asyncHandler(async (req, res) => {
     const request = await http.request(url, options, (response) => {
         response.setEncoding('utf8');
         response.on('data', (data) => {
-            res.status(200).json(JSON.parse(data));
+            res.status(response.statusCode).json(JSON.parse(data));
         });
         response.on('end', () => {
             // console.log('No more data in response.');

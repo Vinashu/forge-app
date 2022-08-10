@@ -15,6 +15,7 @@ app.use(express.urlencoded({extended: true}));
 
 // Routes
 app.use('/api/users', require('./routes/userRoutes'));
+app.use('/api/rewards', require('./routes/rewardRoutes'));
 
 // Serve Frontend
 if(process.env.NODE_ENV === 'production') {

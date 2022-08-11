@@ -12,7 +12,7 @@ function Home() {
 
             <section className="form">
                 <Link to='/activities' className='btn btn-block btn-std'>
-                    <FcFinePrint /> Check My Activities
+                    <FcFinePrint size={30} /> Check My Activities
                 </Link>
             </section>
         </>

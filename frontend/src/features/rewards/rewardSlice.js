@@ -4,6 +4,7 @@ import rewardService from './rewardService';
 const initialState = {
     rewards: [],
     reward: {},
+    newReward: [],
     isError: false,
     isSuccess: false,
     isLoading: false,
@@ -43,7 +44,6 @@ export const getReward = createAsyncThunk('rewards/getOne', async (rewardId, thu
     }
 });
 
-
 export const rewardSlice = createSlice({
     name: 'reward',
     initialState,
@@ -58,7 +58,9 @@ export const rewardSlice = createSlice({
             .addCase(checkRewards.fulfilled, (state, action) => {
                 state.isLoading = false;
                 state.isSuccess = true;
-                state.reward = action.payload;
+                if(action.payload.length > 0) {
+                    state.newReward.push(...action.payload);
+                }
             })
             .addCase(checkRewards.rejected, (state, action) => {
                 state.isLoading = false;

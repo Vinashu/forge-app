@@ -36,7 +36,17 @@ const checkReward = asyncHandler(async (req, res) => {
     const request = await http.request(url, options, (response) => {
         response.setEncoding('utf8');
         response.on('data', (data) => {
-            res.status(response.statusCode).json(JSON.parse(data));
+            const rewards = [];
+            JSON.parse(data).forEach(reward => {
+                rewards.push(reward._id);
+            }) 
+            rewards.forEach((reward) => {
+                if(!user.rewards.includes(reward)) {
+                    user.rewards.push(reward);
+                }
+            });
+            user.save();
+            res.status(response.statusCode).json(rewards);
         });
         response.on('end', () => {
             // console.log('No more data in response.');

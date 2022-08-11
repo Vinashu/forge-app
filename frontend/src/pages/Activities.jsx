@@ -1,23 +1,28 @@
 import React, {useEffect} from 'react';
 import {useSelector, useDispatch} from 'react-redux';
-import {checkRewards, getRewards, resetReward} from '../features/rewards/rewardSlice';
+import {getRewards} from '../features/rewards/rewardSlice';
+import {checkRewards} from '../features/rewards/rewardSlice';
 import {Spinner, BackButton, ActivityItem} from '../components';
 
 function Activities() {
-    const {rewards, isLoading, isSuccess } = useSelector((state) => state.rewards);
+    const {rewards, isLoading} = useSelector((state) => state.rewards);
+    const {user} = useSelector((state) => state.auth);
     const dispatch = useDispatch();
-
-    // useEffect(() => {
-    //     return () => {
-    //         if(isSuccess) {
-    //             dispatch(reset());
-    //         }
-    //     }
-    // }, [dispatch, isSuccess]);
 
     useEffect(() => {
         dispatch(getRewards());
     }, [dispatch]);
+
+    useEffect(() => {
+        if(user.rewards.length === 0) {
+            dispatch(checkRewards([
+                {
+                    variable: 'activityID',
+                    value: 0
+                }
+            ]));
+        }
+    }, [dispatch, user]);
 
     if(isLoading) {
         return <Spinner />;

@@ -21,6 +21,7 @@ import {BackButton, Spinner} from '../components';
 
 function Activity() {
     const { reward, isLoading, isSuccess, isError, message } = useSelector((status) => status.rewards);
+    const { user } = useSelector((status) => status.auth);
     
     const navigate = useNavigate();
     // const params = useParams();
@@ -76,9 +77,9 @@ function Activity() {
                         <p dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(reward.description)}}></p>                        
                     </div>
                 </header>
-                {/* {reward ? (
-                    <button onClick={onTicketClose} className='btn btn-block btn-danger'>Close Ticket</button>
-                ) : (<></>)} */}
+                {(user.rewards.indexOf(reward._id) === user.rewards.length-1 ) && (user.rewards.includes(reward._id)) ? (
+                    <button onClick={onTicketClose} className='btn btn-block btn-std'>Complete This Activity</button>
+                ) : (<></>)}
             </div>
         </>
     );

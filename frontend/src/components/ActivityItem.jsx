@@ -10,12 +10,13 @@ function ActivityItem({reward}) {
         <div className='activity'>
             <div>
                 {
-                    user.rewards.find((userReward) => userReward === reward._id) === undefined ? (
-                        <FaLock size={30} />
-                        ) : (
+                    user.rewards.includes(reward._id) ? (
                         <FaLockOpen size={30}/>
+                        ) : (
+                            <FaLock size={30} />
                         )
                 }
+
             </div>
             <div>{reward.name}</div>
             {/* <div className={`status status-${ticket.status}`}>{ticket.status}</div> */}

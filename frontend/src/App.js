@@ -2,13 +2,16 @@ import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import {ToastContainer} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import {
-  Header,
-  Footer
+  	Header,
+  	Footer,
+  	PrivateRoute
 } from './components';
 import {
-  Home,
-  Login,
-  Register
+	Activity,
+	Activities,
+  	Home,
+  	Login,
+  	Register
 } from './pages';
 
 function App() {
@@ -18,9 +21,17 @@ function App() {
 			<Header />
 			<div className="container">
 				<Routes>
-					<Route path='/' element={<Home />} />
+					<Route path='/' element={<PrivateRoute />} >
+              			<Route path='/' element={<Home />} />
+            		</Route>
 					<Route path='/login' element={<Login />} />
 					<Route path='/register' element={<Register />} />
+					<Route path='/activities' element={<PrivateRoute />} >
+              			<Route path='/activities' element={<Activities />} />
+            		</Route>
+					<Route path='/activity/:activityId' element={<PrivateRoute />} >
+              			<Route path='/activity/:activityId' element={<Activity />} />
+            		</Route>   					
 				</Routes>
 			</div>
 			<Footer />

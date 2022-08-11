@@ -80,5 +80,40 @@ const rewardList = asyncHandler(async (req, res) => {
     });    
 });
 
+// @desc    Get reward 
+// @route   Get /api/rewads/:id
+// @access  Private
+const getReward = asyncHandler(async (req, res) => {
+    // Get user using the id in the JWT
+    const user = await User.findById(req.user.id);
+    if(!user) {
+        res.status(401);
+        throw new Error("User not found.");
+    }
 
-module.exports = { checkReward, rewardList };
+    const url = `${FORGE_URI}/api/rewards/${req.params.id}`;
+    await http.get(url, (response) => {
+        if(response.statusCode != 200) {
+            res.status(response.statusCode).json({message: "Wrong answer from the server"});
+        }
+        response.on('data', (data) => {
+            const rewards = JSON.parse(data);
+            if(rewards.length === 0) {
+                res.status(400).json({message: "No available reward"});
+            } else if(user.rewards.includes(rewards[0]._id)) {
+                res.status(response.statusCode).json(rewards[0]);
+            } else {
+                res.status(401).json({message: "Not authorized"});
+            }
+            response.resume();
+        });
+        response.on('end', () => {
+            // console.log('No more data in response.');
+        });   
+        response.on('error', (data) => {
+            res.status(response.statusCode).json({message: data});            
+        });
+    });
+});
+
+module.exports = { checkReward, rewardList, getReward };

@@ -275,31 +275,31 @@ h3 {
   /* background-color: black; */
 }
 
-.ticket-created {
+.activity-created {
   border: 1px solid #e6e6e6;
   border-radius: 5px;
   padding: 50px;
 }
 
-.ticket-number {
+.activity-number {
   margin-bottom: 30px;
 }
 
-.ticket-number h2 {
+.activity-number h2 {
   font-size: 2.3rem;
   margin-bottom: 10px;
 }
 
-.ticket-number p {
+.activity-number p {
   font-size: 1.3rem;
 }
 
-.ticket-info {
+.activity-info {
   font-size: 1.3rem;
 }
 
-.ticket,
-.ticket-headings {
+.activity,
+.activity-headings {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
@@ -312,7 +312,7 @@ h3 {
   text-align: center;
 }
 
-.ticket-headings {
+.activity-headings {
   font-weight: 700;
 }
 
@@ -340,32 +340,33 @@ h3 {
 }
 
 .status-closed {
-  background-color: darkred;
+  /* background-color: darkred; */
+  background-color: var(--Pllt2);
   color: #fff;
   border-radius: 10px;
 }
 
-.ticket-page {
+.activity-page {
   position: relative;
   text-align: left;
 }
 
-.ticket-page h2 {
+.activity-page h2 {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.ticket-page .btn {
+.activity-page .btn {
   margin-bottom: 30px;
 }
 
-.ticket-page .btn-block {
+.activity-page .btn-block {
   width: 100%;
   margin-top: 30px;
 }
 
-.ticket-desc {
+.activity-desc {
   margin: 20px 0;
   font-size: 17px;
   background-color: #f4f4f4;
@@ -490,7 +491,7 @@ footer {
     width: 90%;
   }
 
-  .ticket-created h2,
+  .activity-created h2,
   .heading h1 {
     font-size: 2rem;
   }

@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect} from 'react';
 // import DOMPurify from 'dompurify'
 import {useSelector, useDispatch} from 'react-redux';
 import {useParams, useNavigate} from 'react-router-dom';
@@ -9,7 +9,6 @@ import {BackButton, Spinner} from '../components';
 
 function Activity() {
     const { reward, isLoading, isError, message } = useSelector((status) => status.rewards);
-    const { user } = useSelector((status) => status.auth);
     
     const navigate = useNavigate();
     const {activityId} = useParams();

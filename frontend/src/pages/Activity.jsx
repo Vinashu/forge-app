@@ -65,7 +65,7 @@ function Activity() {
                 <header className='activity-header'>
                     <BackButton url='/activities' />
                     <h2>
-                        Activity ID:
+                        {reward.name}
                         <span className="status status-closed">
                             {reward._id}
                         </span>

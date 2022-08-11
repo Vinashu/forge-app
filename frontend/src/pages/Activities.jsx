@@ -2,6 +2,7 @@ import React, {useEffect} from 'react';
 import {useSelector, useDispatch} from 'react-redux';
 import {getRewards} from '../features/rewards/rewardSlice';
 import {checkRewards} from '../features/rewards/rewardSlice';
+import {BsBookmarkCheckFill} from 'react-icons/bs';
 import {Spinner, BackButton, ActivityItem} from '../components';
 
 function Activities() {
@@ -31,7 +32,7 @@ function Activities() {
     return (
         <>
             <BackButton url='/' />
-            <h1>Actitivies</h1>
+            <h1><BsBookmarkCheckFill size={40}/>Actitivies</h1>
             {/* <div className='activity'>
                 <div className='activity-headings'>
                     <div>Date</div>

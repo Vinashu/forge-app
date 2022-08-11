@@ -7,6 +7,9 @@ function Home() {
         <>
             <section className='heading'>
                 <h1>Welcome to the FORGE App</h1>
+                <hr />
+                <p>The FORGE App is an educational application created to demonstrate the potential use of the FORGE framework.</p>
+                <hr />                
                 <p>What are you up to today?</p>
             </section>
 

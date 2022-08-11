@@ -2,6 +2,7 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import {useSelector} from 'react-redux';
 import {FaLockOpen, FaLock} from 'react-icons/fa';
+import {GrView} from 'react-icons/gr';
 
 function ActivityItem({reward}) {
     const {user} = useSelector((state) => state.auth);
@@ -26,7 +27,7 @@ function ActivityItem({reward}) {
                     to={`/activity/${reward._id}`} 
                     className='btn btn-reverse btn-sm activity-right' 
                 >
-                   View
+                   <GrView size={15} />View
                 </Link>
             }
         </div>

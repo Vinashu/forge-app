@@ -2,7 +2,7 @@ import React, {useEffect} from 'react';
 // import DOMPurify from 'dompurify'
 import {useSelector, useDispatch} from 'react-redux';
 import {useParams, useNavigate} from 'react-router-dom';
-import {BsFillCaretRightFill} from 'react-icons/bs';
+import {BsFillCaretRightFill, BsCheckCircleFill} from 'react-icons/bs';
 import {toast} from 'react-toastify';
 import {getReward, checkRewards} from '../features/rewards/rewardSlice';
 import {BackButton, Spinner} from '../components';
@@ -64,7 +64,7 @@ function Activity() {
                     </div>
                 </header>
                 {/* {(user.rewards.indexOf(reward._id) === user.rewards.length-1 ) && (user.rewards.includes(reward._id))  ? ( */}
-                    <button onClick={onTicketClose} className='btn btn-block btn-std'>Complete This Activity</button>
+                    <button onClick={onTicketClose} className='btn btn-block btn-std'><BsCheckCircleFill />Complete This Activity</button>
                 {/* ) : (<></>)} */}
             </div>
         </>

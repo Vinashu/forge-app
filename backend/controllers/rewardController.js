@@ -24,8 +24,8 @@ const checkReward = asyncHandler(async (req, res) => {
         throw new Error("Missing messages.");
     }
 
-    const url = `${FORGE_URI}/api/rewards`;
-    const postData = JSON.stringify(messages);   
+    const url = `${FORGE_URI}/api/engine`;
+    const postData = JSON.stringify(messages);  
     const options = {
         method: 'POST',
         headers: {
@@ -38,7 +38,7 @@ const checkReward = asyncHandler(async (req, res) => {
         response.on('data', (data) => {
             const rewards = [];
             JSON.parse(data).forEach(reward => {
-                rewards.push(reward._id);
+                rewards.push(reward);
             }) 
             rewards.forEach((reward) => {
                 if(!user.rewards.includes(reward)) {
@@ -73,7 +73,7 @@ const rewardList = asyncHandler(async (req, res) => {
         throw new Error("User not found.");
     }
 
-    const url = `${FORGE_URI}/api/rewards`;
+    const url = `${FORGE_URI}/api/engine`;
 
     const request = await http.get(url, (response) => {
         response.on('data', (data) => {
@@ -101,17 +101,17 @@ const getReward = asyncHandler(async (req, res) => {
         throw new Error("User not found.");
     }
 
-    const url = `${FORGE_URI}/api/rewards/${req.params.id}`;
+    const url = `${FORGE_URI}/api/engine/${req.params.id}`;
     await http.get(url, (response) => {
         if(response.statusCode != 200) {
             res.status(response.statusCode).json({message: "Wrong answer from the server"});
         }
         response.on('data', (data) => {
-            const rewards = JSON.parse(data);
-            if(rewards.length === 0) {
+            const reward = JSON.parse(data);
+            if(!reward) {
                 res.status(400).json({message: "No available reward"});
-            } else if(user.rewards.includes(rewards[0]._id)) {
-                res.status(response.statusCode).json(rewards[0]);
+            } else if(user.rewards.includes((reward._id).toString())) {
+                res.status(response.statusCode).json(reward);
             } else {
                 res.status(401).json({message: "Not authorized"});
             }

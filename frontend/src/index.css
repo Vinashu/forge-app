@@ -30,6 +30,16 @@ body {
   position: fixed;
 }
 
+.ql-video
+{
+    width: 640px;
+    height: 480px;
+    align-items: center;
+    text-align: center;
+    display: block; 
+    margin: 0 auto;
+}
+
 a {
 	text-decoration: none;
 	color: var(--Pllt2);

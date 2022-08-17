@@ -10,3 +10,5 @@ export { default as Spinner } from './Spinner';
 export { default as PrivateRoute } from './PrivateRoute';
 // eslint-disable-next-line
 export { default as ActivityItem } from './ActivityItem';
+// eslint-disable-next-line
+export { default as NotFound } from './NotFound';

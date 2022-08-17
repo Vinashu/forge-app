@@ -4,7 +4,8 @@ import 'react-toastify/dist/ReactToastify.css';
 import {
   	Header,
   	Footer,
-  	PrivateRoute
+  	PrivateRoute,
+	NotFound
 } from './components';
 import {
 	Activity,
@@ -31,7 +32,8 @@ function App() {
             		</Route>
 					<Route path='/activity/:activityId' element={<PrivateRoute />} >
               			<Route path='/activity/:activityId' element={<Activity />} />
-            		</Route>   					
+            		</Route>
+					<Route path="*" element={<NotFound />} />
 				</Routes>
 			</div>
 			<Footer />

@@ -41,8 +41,8 @@ function Activities() {
                 </div>
             </div> */}
             <div className='activity-desc'>
-                {rewards.map((reward) => (
-                    <ActivityItem key={reward._id} reward={reward} />
+                {rewards?.map((reward) => (
+                    <ActivityItem key={reward?._id} reward={reward} />
                 ))}                
             </div>
         </>

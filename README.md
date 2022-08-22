@@ -60,23 +60,6 @@ cd frontend
 npm install
 npm build
 ```
-### Local Installation
-The application is divided into two parts, the Backend, where all the communication and connection logic with the framework is located, and the Frontend, which is the application itself. To install the FORGE App, it is necessary to install the Backend, install the Frontend, generate the static pages and create the config file.
-
-#### Installing the Backend
-In the root of the application directory, use the command:
-```bash
-npm install
-```
-Esse processo irá efetuar o download de todas as bibliotecas e demais dependências necessárias. O processo poderá levar alguns minutos.
-
-#### Installing the Frontend
-Enter the frontend directory and use two commands, one to install the dependencies and the other to generate the static pages:
-```
-cd frontend
-npm install
-npm build
-```
 
 #### Creating the .env File
 The application needs a configuration file called **.env**. As this file contains sensitive content, it is unavailable in the repository. You can create your file using the Mac terminal:
@@ -98,15 +81,15 @@ MONGO_URI = mongodb+srv://YOUR_LOGIN:YOUR_PASSWORD@merncluster.gdqnr.mongodb.net
 FORGE_URI = http://localhost:4500
 ```
 
-**NOD_ENV** can have two values: **production** or **development**. The backend is ready to run if the value is set to **production**. You can run the application for tests if it is set to **development**.
+- **NOD_ENV** can have two values: **production** or **development**. The backend is ready to run if the value is set to **production**. You can run the application for tests if it is set to **development**.
 
-**PORT** accepts a numeric value and sets the port for which the server will be listening for requests. In this example, the port is set to **5001**.
+- **PORT** accepts a numeric value and sets the port for which the server will be listening for requests. In this example, the port is set to **5001**.
 
-**JWT_SECRET** is used to encrypt the token to validate the communication between the Frontend and the Backend. Use a long sequence of numbers and letters without blank spaces.
+- **JWT_SECRET** is used to encrypt the token to validate the communication between the Frontend and the Backend. Use a long sequence of numbers and letters without blank spaces.
 
-**MONGO_URI** is the address of the database. The FORGE App connects to a MongoDB database. This example is connected to a database on the cloud hosted by MongoDB. You can change this variable to point to your local server. You must add your login (**YOUR_LOGIN**) and password (**YOUR_PASSWORD**) to URI.
+- **MONGO_URI** is the address of the database. The FORGE App connects to a MongoDB database. This example is connected to a database on the cloud hosted by MongoDB. You can change this variable to point to your local server. You must add your login (**YOUR_LOGIN**) and password (**YOUR_PASSWORD**) to URI.
 
-**FORGE_URI** is the address of the FORGE framework. It can be on your local machine, for example, or on the internet.
+- **FORGE_URI** is the address of the FORGE framework. It can be on your local machine, for example, or on the internet.
 
 #### Run the Server
 The last step is to start the server:
@@ -114,4 +97,13 @@ The last step is to start the server:
 npm run start
 ```
 
+
 ### Online Deployment
+You can alternatively run the FORGE App in the cloud. If you want to create a free MongoDB Atlas account, read this article:
+[https://www.mongodb.com/docs/atlas/getting-started/](https://www.mongodb.com/docs/atlas/getting-started/)
+
+If you want to deploy the FORGE App directly from your git repository, follow the steps in this article:
+[https://devcenter.heroku.com/articles/github-integration](https://devcenter.heroku.com/articles/github-integration)
+
+You can also edit config vars from your app’s Settings tab in the Heroku Dashboard:
+[https://devcenter.heroku.com/articles/config-vars#using-the-heroku-dashboard](https://devcenter.heroku.com/articles/config-vars#using-the-heroku-dashboard)

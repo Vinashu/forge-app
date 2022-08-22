@@ -15,3 +15,30 @@ The Forge App: [https://forge-app-example.herokuapp.com/](https://forge-app-exam
 There is also an online version of the FORGE framework available for testing. All rewards created in it will be visible in the FORGE App.
 
 The FORGE Framework: [https://forge-server-example.herokuapp.com/](https://forge-server-example.herokuapp.com/)
+
+## Features
+- Frontend responsible for the single-page application.
+- Backend with protected routes that serve as an intermediary between the Frontend and the Framework.
+- Full integration with the FORGE framework.
+- Simplified user creation.
+- List of activities that can include texts, videos (hosted on YouTube) and quizzes (via Google Form).
+
+## Installation
+The application can be installed locally or on a remote server. Installation details of the [FORGE framework](https://github.com/Vinashu/forge-server) can be found in its repository.
+
+### Cloning or Downloading the source code
+The first step is to clone or download the source code. To clone it, open a terminal on your computer and use the command:
+
+```bash
+git clone https://github.com/Vinashu/forge-app.git
+```
+
+Alternatively, you can visit the repository, click the "code" button and then click Download ZIP.
+
+![Download](docs/images/download.png) 
+
+After downloading it, you must unzip the file before using it. You don't need this step if you have cloned the repository.
+
+```bash
+unzip forge-app-main.zip
+```

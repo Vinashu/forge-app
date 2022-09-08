@@ -1,9 +1,9 @@
 # FORGE App
-This website is an educational application designed for the classroom. In it, the student finds a list of activities (Figure 1-a) released sequentially after interacting with each of them (Figure 1-b). It was created to show a possible use of the FORGE framework.
+This website is an educational application designed for the classroom. In it, the student can find a list of activities (Figure 1-a) released sequentially after interacting with each of them (Figure 1-b). It was created to show a possible use of the FORGE framework.
 
-FORGE is a framework created to manage rewards in gamified environments. Registering the rewards and defining how they will be released is possible. The framework has an API that receives messages, processes them, and sends rewards back. More about the [FORGE framework can be learned from its repository](https://github.com/Vinashu/forge-server).
+FORGE is a framework created to manage rewards in gamified environments. The framework has an API that receives messages, processes them, and sends rewards back. More about the [FORGE framework can be learned from its repository](https://github.com/Vinashu/forge-server).
 
-In the case of the FORGE App, each activity is a reward created in the FORGE framework. In addition to basic functionality, such as user control and content display, the site prepares messages, sends them to the framework, and applies changes that reflect the responses received.
+In the case of the FORGE App, each activity is a reward created in the FORGE framework. In addition to basic functionality, such as user control and content display, the site prepares messages, sends them to the framework, and applies changes that correspond to the responses received.
 
 ![Figure 1](docs/images/figure1.png) 
 
@@ -51,7 +51,7 @@ In the root of the application directory, use the command:
 ```bash
 npm install
 ```
-Esse processo irá efetuar o download de todas as bibliotecas e demais dependências necessárias. O processo poderá levar alguns minutos.
+This process will download all necessary libraries and dependencies. It could take a few minutes.
 
 #### Installing the Frontend
 Enter the frontend directory and use two commands, one to install the dependencies and the other to generate the static pages:
@@ -62,7 +62,7 @@ npm build
 ```
 
 #### Creating the .env File
-The application needs a configuration file called **.env**. As this file contains sensitive content, it is unavailable in the repository. You can create your file using the Mac terminal:
+The application needs a configuration file called **.env**. As this file contains sensitive information, it is unavailable in the repository. You can create your file using the Mac terminal:
 ```bash
 touch .env
 ```
@@ -83,7 +83,7 @@ FORGE_URI = http://localhost:4500
 
 - **NOD_ENV** can have two values: **production** or **development**. The backend is ready to run if the value is set to **production**. You can run the application for tests if it is set to **development**.
 
-- **PORT** accepts a numeric value and sets the port for which the server will be listening for requests. In this example, the port is set to **5001**.
+- **PORT** accepts a numeric value and sets the port on which the server will be listening for requests. In this example, the port is set to **5001**.
 
 - **JWT_SECRET** is used to encrypt the token to validate the communication between the Frontend and the Backend. Use a long sequence of numbers and letters without blank spaces.
 
